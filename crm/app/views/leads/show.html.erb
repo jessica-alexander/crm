@@ -1,2 +1,11 @@
 <h1>Leads#show</h1>
 <p>Find me in app/views/leads/show.html.erb</p>
+
+ First Name: <%= @lead.first_name %> <br />
+ Last Name: <%=@lead.last_name %> <br />
+ Telephone: <%=@lead.phone_number %> <br />
+ Notes: <%= @lead.notes %> <br />
+
+ <%= link_to 'Edit', edit_lead_path %> <br />
+ <%= link_to 'Delete', lead_path(@lead), method: :delete %>
+ <%= link_to 'Back', leads_path %>
