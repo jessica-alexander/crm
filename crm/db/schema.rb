@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131001906) do
+ActiveRecord::Schema.define(version: 20170131014331) do
 
   create_table "call_logs", force: :cascade do |t|
     t.datetime "date"
     t.text     "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "lead_id"
   end
 
   create_table "leads", force: :cascade do |t|

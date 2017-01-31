@@ -9,3 +9,25 @@
  <%= link_to 'Edit', edit_lead_path %> <br />
  <%= link_to 'Delete', lead_path(@lead), method: :delete %>
  <%= link_to 'Back', leads_path %>
+
+<h2> Call Logs </h2>
+
+<% @lead.call_logs.each do |call_log| %>
+
+  <p>
+     <%= call_log.created_at %>
+     <%= call_log.note %>
+  </p>
+
+<% end %>
+
+<%= form_for ([@lead, @call_log]) do |f| %>
+
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
