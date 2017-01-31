@@ -24,7 +24,7 @@ class CallLogsController < ApplicationController
     if @call_log.save
       redirect_to lead_call_logs_path
     else
-      render 'lead_url(@lead)'
+      render lead_path(@lead)
     end
   end
 
