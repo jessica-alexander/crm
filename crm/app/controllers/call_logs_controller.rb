@@ -2,41 +2,44 @@ class CallLogsController < ApplicationController
 
   before_action :load_lead
 
-  # def index
-  # @call_logs = Call_Log.all
-  # end
+  def index
+  @call_logs = Call_Log.all
+  end
 
   def show
     @call_log = Call_Log.find(params[:id])
+    @lead = Lead.find(params[:lead_id])
   end
 
-  # def new
-  #   @call_log = Call_Log.new
-  # end
+  def new
+    @call_log = Call_Log.new
+    @lead = Lead.find(params[:lead_id])
+  end
 
-  # def edit
-  #   @call_log = Call_Log.find(params[:id])
-  # end
+  def edit
+    @call_log = Call_Log.find(params[:id])
+  end
 
   def create
-    @call_log = @lead.call_logs.build(call_log_params)
+
+    @call_log = Call_Log.new(call_log_params)
 
     if @call_log.save
-      redirect_to lead_call_logs_path
+      redirect_to lead_call_log_path(@lead, @call_log)
     else
-      render lead_path(@lead)
+      render :new
     end
   end
 
-  # def update
-  #   @call_log = Call_Log.find(params[:id])
-  #
-  #   if @call_log.update_attributes(lead_params)
-  #     redirect_to lead_url(@call_log)
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @call_log = Call_Log.find(params[:id])
+
+    if @call_log.update_attributes(lead_params)
+      redirect_to call_logs_url(@call_log)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @call_log = Call_Log.find(params[:id])
