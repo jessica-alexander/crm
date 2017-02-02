@@ -2,7 +2,21 @@
 <p>Find me in app/views/call_logs/new.html.erb</p>
 
 <%= form_for [@lead, @call_log] do |f| %>
-<% f.hiddent_field :lead_id, value: @lead.id %>
+
+<% if @call_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@call_log.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @call_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<% f.hidden_field :lead_id, value: @lead.id %>
 
   <div class="field">
     <%= f.label :note %><br />
