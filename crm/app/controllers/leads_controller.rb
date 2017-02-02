@@ -6,7 +6,7 @@ end
 
 def show
   @lead = Lead.find(params[:id])
-  @call_log = @lead.call_logs.build
+  # @call_log = Call_Log.new()
 end
 
 def new
