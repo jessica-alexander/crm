@@ -1,4 +1,4 @@
 class CallLog < ApplicationRecord
 
-  belongs_to :leads
+  belongs_to :lead
 end
