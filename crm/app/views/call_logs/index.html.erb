@@ -1,13 +1,19 @@
 <h1>CallLogs#index</h1>
 <p>Find me in app/views/call_logs/index.html.erb</p>
 
+<%= link_to 'Back', lead_url(@lead) %>
+<%= link_to 'New Entry', new_lead_call_log_path(@lead,@call_log) %>
+
 <h2> Call Logs </h2>
 
 <% @lead.call_logs.each do |call_log| %>
 
   <p>
-     <%= call_log.created_at %>
-     <%= call_log.note %>
+     <%= call_log.created_at.strftime("%A %B %d, %Y") %>
+     <%= call_log.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%l:%M %p")%>
+     <p> Log: <br/> <%= call_log.note %> </p>
   </p>
+
+  <%= link_to 'Show', lead_call_log_path(@lead,call_log) %>
 
 <% end %>
