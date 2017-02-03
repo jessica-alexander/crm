@@ -1,4 +1,39 @@
-<h1> Make an Appointment</h1>
+<h1 class="title"> Make an Appointment</h1>
 
 <%= link_to 'Back', lead_appointments_path(@lead) %>
-<% render 'form' %>
+
+<%= form_for [@lead, @appointment] do |f| %>
+
+<% if @appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<% f.hidden_field :lead_id, value: @lead.id %>
+
+<div class="">
+  <%= f.label :date %><br>
+  <%= f.date_field :date %>
+  <!-- <%= select_month DateTime.now %>
+  <%= select_day DateTime.now  %>
+  <%= select_year DateTime.now %> -->
+</div>
+
+<div class="">
+  <%= f.label :time %><br>
+  <%= f.time_field :time %>
+</div>
+ <br/>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
