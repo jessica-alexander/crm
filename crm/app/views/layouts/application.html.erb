@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <header>
+
+      <h2>Statflo</h2>
+      <div class="header">
+        <span class="header-links"><%= link_to 'Leads', leads_path %></span>
+        <span class="header-links"><%= link_to 'Create Lead', new_lead_path %></span>
+        <span class="header-links"><%= link_to 'Accounts', accounts_path %></span>
+        <span class="header-links"><%= link_to 'Create Account', new_account_path %></span>
+      </div>
+    </header>
+  <%= yield %>
+
+  <footer>
+    <h2> &copy; 2017</h2>
+  </footer>
   </body>
 </html>
