@@ -13,3 +13,174 @@
  *= require_tree .
  *= require_self
  */
+ /* http://meyerweb.com/eric/tools/css/reset/
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure,
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+
+
+ body {
+   /*background: linear-gradient(80deg, white, #0d1921);*/
+   /*height: 200%;
+   background-size: 200% 200%;*/
+   /*background: (-200deg, white, lightblue, purple);*/
+ }
+
+ header {
+  color: white;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-right: 10px;
+   background: #59a5dc;
+   height: 30px
+ }
+
+ footer {
+   background: #0d1921;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+   height: 29px;
+   text-align: center;
+   padding-top: 18px;
+   color: white;
+ }
+
+ .lead-container {
+    /*display: inline-block;*/
+    border: 1px solid #59a5dc;
+    line-height: 1.5em;
+    height: 550px;
+    max-width: 100%;
+    padding: 10px;
+    margin: auto;
+    background: gray;
+}
+
+.lead-index-container, .calllog-index-container, .appointment-index-container {
+     border: 4px solid grey;
+     margin: 10px 0px;
+     padding: 10px 10px;
+     text-align: center;
+     background: grey;
+     color: #59a5dc;
+     height: 10;
+}
+h1.lead-title, h1.title {
+    /*background: grey;*/
+    padding: 10px;
+    font-size: 20pt;
+    color: #59a5dc;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid grey;
+}
+
+.header {
+  text-align: right;
+}
+
+span.header-links {
+    position: relative;
+    top: -16px;
+    padding-left: 15px;
+}
+
+a {
+    /*border: 1px solid  #59a5dc;
+    padding: 15px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: auto;*/
+    text-decoration: none;
+    color: lightgrey;
+    /*background: #59a5dc;*/
+}
+
+.container2 {
+    float: left;
+    width: 30%;
+}
+
+.container1 {
+  float: right;
+  width: 60%;
+  float: right;
+  width: 60%;
+  line-height: 2em;
+  color: #59a5dc;
+  padding: 10px 15px;
+  font-size: 20pt;
+  border: 5px solid grey;
+  overflow: scroll;
+  background: white;
+  /*margin-top: 10px;*/
+}
+
+span.sublinks {
+    display: block;
+    padding: 5px;
+    border: 1px solid #59a5dc;
+    margin-bottom: 10px;
+    background: #59a5dc;
+}
+
+textarea#call_log_note {
+    height: 300px;
+    width: 100%;
+    border: 0px solid #59a5dc;
+    background: grey;
+}
+
+input[type="submit"] {
+    background: #59a5dc;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+}
