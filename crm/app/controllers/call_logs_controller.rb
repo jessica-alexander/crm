@@ -35,8 +35,8 @@ class CallLogsController < ApplicationController
   def update
     @call_log = CallLog.find(params[:id])
 
-    if @call_log.update_attributes(lead_params)
-      redirect_to call_logs_url(@call_log)
+    if @call_log.update_attributes(call_log_params)
+      redirect_to lead_call_logs_url(@lead,@call_log)
     else
       render :edit
     end
