@@ -11,6 +11,7 @@ end
 
 def new
   @lead = Lead.new
+  @account = Account.new
 end
 
 def edit
