@@ -1,14 +1,20 @@
-<h1>Leads#show</h1>
-<p>Find me in app/views/leads/show.html.erb</p>
+<h1 class="title">Lead Info</h1>
+<div class="lead-container">
+  <div class="container1">
 
- First Name: <%= @lead.first_name %> <br />
- Last Name: <%=@lead.last_name %> <br />
- Telephone: <%=@lead.phone_number %> <br />
- Notes: <%= @lead.notes %> <br />
+   First Name: <%= @lead.first_name %> <br />
+   Last Name: <%=@lead.last_name %> <br />
+   Telephone: <%=@lead.phone_number %> <br />
+   Notes: <%= @lead.notes %> <br />
+  </div>
+ <div class="container2">
 
- <%= link_to 'Edit', edit_lead_path %> <br />
- <%= link_to 'Delete', lead_path(@lead), method: :delete %>
- <%= link_to 'Back', leads_path %>
+   <span class="sublinks"><%= link_to 'Edit', edit_lead_path %> </span>
+   <span class="sublinks"><%= link_to 'Delete', lead_path(@lead), method: :delete %> </span>
+   <span class="sublinks"><%= link_to 'Back', leads_path %> </span>
 
- <%= link_to 'Call Log', lead_call_logs_path(@lead) %>
- <%= link_to 'Appointments', lead_appointments_path(@lead) %>
+   <span class="sublinks"><%= link_to 'Call Log', lead_call_logs_path(@lead) %> </span>
+   <span class="sublinks"><%= link_to 'Appointments', lead_appointments_path(@lead) %> </span>
+
+ </div>
+</div>
