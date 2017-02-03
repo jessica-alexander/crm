@@ -1,8 +1,11 @@
-<h1>Leads#index</h1>
-<p>Find me in app/views/leads/index.html.erb</p>
+<h1 class="lead-title">Leads</h1>
 
-<%= link_to 'New Lead', new_lead_path %>
 
-<% @leads.each do |lead| %>
-  <p><%= link_to lead.first_name, lead_url(lead) %> </p>
-<% end %>
+
+  <% @leads.each do |lead| %>
+  <div class="lead-index-container">
+    <p>Name: <%= lead.first_name %> <%= lead.last_name %>  </p>
+    <p>Phone Number: <%= lead.phone_number %></p>
+    <p><%= link_to 'View', lead_url(lead)%></p>
+  </div>
+  <% end %>
