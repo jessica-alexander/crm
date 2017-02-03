@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'accounts/index'
+
+  get 'accounts/show'
+
+  get 'accounts/new'
+
+  get 'accounts/edit'
+
 root 'leads#index'
 
 resources :leads do
