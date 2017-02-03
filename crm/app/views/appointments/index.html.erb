@@ -1,2 +1,18 @@
 <h1>Appointments#index</h1>
 <p>Find me in app/views/appointments/index.html.erb</p>
+
+<%= link_to 'Setup Appointment', new_lead_appointment_path(@lead,@appointment) %>
+<%= link_to 'Back', lead_url(@lead) %>
+
+<h2> Appointments </h2>
+
+<% @lead.appointments.each do |appointment| %>
+
+  <p>
+     <%= appointment.date.strftime("%A %B %d, %Y") %> <br />
+     <%= appointment.time.strftime("%l:%M %p")%>
+  </p>
+
+  <%= link_to 'Show', lead_appointment_path(@lead,appointment) %>
+
+<% end %>
