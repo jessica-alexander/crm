@@ -18,10 +18,10 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = Account.new(lead_params)
+    @account = Account.new(account_params)
 
-    if @acount.save
-      redirect_to account_path
+    if @account.save
+      redirect_to accounts_path
     else
       render :new
     end
