@@ -1,1 +1,11 @@
 <h1>Accounts</h1>
+
+<p> <%= link_to "New", new_account_path %>
+
+  <% @accounts.each do |account| %>
+  <div class="lead-index-container">
+    <p>Name: <%= account.first_name %> <%= account.last_name %>  </p>
+    <p>Phone Number: <%= account.phone_number %></p>
+    <p><%= link_to 'View', account_url(account)%></p>
+  </div>
+  <% end %>
