@@ -1,2 +1,18 @@
-<h1>Accounts#show</h1>
-<p>Find me in app/views/accounts/show.html.erb</p>
+<h1>Accounts</h1>
+<div class="lead-container">
+  <div class="container1">
+
+   First Name: <%= @account.first_name %> <br />
+   Last Name: <%=@account.last_name %> <br />
+   Telephone: <%=@account.phone_number %> <br />
+   Notes: <%= @account.notes %> <br />
+  </div>
+
+  <div class="container2">
+
+    <span class="sublinks"><%= link_to 'Edit', edit_account_path %> </span>
+    <span class="sublinks"><%= link_to 'Delete', account_path(@lead), method: :delete %> </span>
+    <span class="sublinks"><%= link_to 'Back', accounts_path %> </span>
+
+  </div>
+<div>
