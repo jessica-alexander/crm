@@ -48,4 +48,5 @@ private
 def lead_params
   params.require(:lead).permit(:first_name, :last_name, :phone_number, :notes)
 end
+
 end

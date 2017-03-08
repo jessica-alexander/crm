@@ -19,12 +19,12 @@
  </div>
 
 
-<%= form_for(@account) do |f| %>
+<%= form_for @account do |f| %>
 
-<% f.hidden_field :first_name, value: @lead.first_name%>
-<% f.hidden_field :last_name, value: @lead.last_name%>
-<% f.hidden_field :phone_number, value: @lead.phone_number%>
-<% f.hidden_field :notes, value: @lead.notes%>
+<%= f.hidden_field :first_name, value: @lead.first_name%>
+<%= f.hidden_field :last_name, value: @lead.last_name%>
+<%= f.hidden_field :phone_number, value: @lead.phone_number%>
+<%= f.hidden_field :notes, value: @lead.notes%>
 
   <div class="actions">
     <%= f.submit %>
